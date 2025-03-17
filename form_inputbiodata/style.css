@@ -1,0 +1,14 @@
+.judul{
+    font: 15px Impact;
+    color: rgb(33, 22, 6);
+}
+.container {
+    width: 40%;
+    margin: auto;
+    overflow: hidden;
+    padding: 50px;
+    background-color: rgba(45, 228, 124, 0.749);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
