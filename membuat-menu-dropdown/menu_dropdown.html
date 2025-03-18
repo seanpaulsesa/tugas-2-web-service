@@ -1,0 +1,194 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="menu"> 
+        <ul> 
+        <li><a href="#">Menu</a> 
+        <ul> 
+        <li><a href="#">Menu 1</a></li> 
+        <li><a href="#">Menu 2</a></li> 
+        <li><a href="#">Menu 3</a></li> 
+        </ul> 
+        </li> 
+        <li><a href="#">Artikel</a> 
+        <ul> 
+        <li><a href="#">Artikel 1</a></li> 
+        <li><a href="#">Artikel 2</a></li> 
+        <li><a href="#">Artikel 3</a></li> 
+        <li><a href="#">Artikel 4</a></li> 
+        </ul> 
+        </li> 
+        <li><a href="#">Contact</a> 
+        <ul> 
+        <li><a href="#">Facebook</a></li> 
+        <li><a href="#">Twitter</a></li> 
+        <li><a href="#">Phone</a></li> 
+        </ul> 
+        </li> 
+        </ul> 
+        </div>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Dropdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropdown-button">Menu</button>
+        <div class="dropdown-content">
+            <a href="#">Pilihan 1</a>
+            <a href="#">Pilihan 2</a>
+            <a href="#">Pilihan 3</a>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Dropdown Interaktif</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .dropdown-button {
+            background-color: #3498db;
+            color: rgb(250, 246, 246);
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(206, 169, 169);
+            min-width: 160px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #54c4a8;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropdown-button" onclick="toggleDropdown('menu1')">Menu</button>
+        <div class="dropdown-content" id="menu1">
+            <a href="#">Artikel 1</a>
+            <a href="#">Artikel 2</a>
+            <a href="#">Artikel 3</a>
+            <a href="#">Artikel 4</a>
+        </div>
+    </div>
+    
+    <div class="dropdown">
+        <button class="dropdown-button" onclick="toggleDropdown('menu2')">Artikel</button>
+        <div class="dropdown-content" id="menu2">
+            <a href="#">Artikel 1</a>
+            <a href="#">Artikel 2</a>
+            <a href="#">Artikel 3</a>
+            <a href="#">Artikel 4</a>
+        </div>
+    </div>
+    
+    <div class="dropdown">
+        <button class="dropdown-button" onclick="toggleDropdown('menu3')">Contact</button>
+        <div class="dropdown-content" id="menu3">
+            <a href="#">Contact 1</a>
+            <a href="#">Contact 2</a>
+            <a href="#">Contact 3</a>
+            <a href="#">Contact 4</a>
+           
+        </div>
+    </div>
+    
+    <script>
+        function toggleDropdown(menuId) {
+            var menu = document.getElementById(menuId);
+            var allMenus = document.querySelectorAll('.dropdown-content');
+            
+            allMenus.forEach(m => {
+                if (m.id !== menuId) {
+                    m.style.display = 'none';
+                }
+            });
+            
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+        
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-button')) {
+                document.querySelectorAll('.dropdown-content').forEach(menu => {
+                    menu.style.display = 'none';
+                });
+            }
+        }
+    </script>
+</body>
+</html>
